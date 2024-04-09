@@ -19,7 +19,6 @@ code {
   .card {
   width: 600px;
   min-height: 560px;
-  max-height: auto;
   background-color: #fff;
   border-radius: 15px;
   box-shadow: hsla(293, 16%, 49%, 0.171) 0px 30px 40px 0px;
@@ -28,15 +27,15 @@ code {
 @media screen and (max-width: 500px){
   .title {
     margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: 700;
 }
 }
 @media screen and (max-width: 500px) {
-  body::before {
-    top: -45px;
+  .style-mobile {
     background-size: cover;
     background-position: center;
-  }
-  .style-mobile {
+    top: -45;
     width: 330px;
     min-height: 520px;
     border-radius: 10px;
@@ -49,10 +48,13 @@ code {
   margin: 40px 40px 0 40px;
 }
 h1 {
-  font-size: 55px;
+  font-family: "Work Sans", sans-serif;
+  margin-bottom: 30px;
   font-weight: 700;
-  margin-left: 20px;
 }
 .star {
   width: 35px;
+}
+p, span{
+  font-family: "Work Sans", sans-serif;
 }

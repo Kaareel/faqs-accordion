@@ -2,33 +2,35 @@ import { useState } from "react";
 import { IconPlus, IconMinus } from "../components/Icon";
 
 interface Props {
-  isOpen: boolean;
-  setIsOpen(value: boolean): void;
   title: string;
   description: string;
 }
 
 function FaqItem(props: Props) {
-console.log("open", props.isOpen)
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div>
-      <details
-        className={`open:bg-white open:shadow-lg p-6 rounded-lg border-b ${
-          props.isOpen ? "open" : ""
-        }`}
-        open={props.isOpen}
-        onClick={() => props.setIsOpen(!props.isOpen)}
-      >
-        <summary className="text-sm leading-6 pr-3 hover:text-textColorHover hover:font-bold text-slate-900 dark:text-white font-semibold select-none flex items-center space-x-2 cursor-pointer">
+    <div className="">
+      <div className=" open:bg-white open:shadow-lg p-6 rounded-lg border-b">
+        <button
+          onClick={handleToggle}
+          className="hover:text-textColorHover hover:font-bold text-lg leading-6 pr-3 font-semibold flex items-center"
+        >
           {props.title}
-          <span className="ml-2 absolute right-0">
-            {props.isOpen ? <IconPlus/> : <IconMinus/>}
+          <span className=" absolute right-0 ">
+            {!isOpen ? <IconPlus /> : <IconMinus />}
           </span>
-        </summary>
-        <div className="mt-3 text-sm leading-6 text-textColor">
-          <p>{props.description}</p>
-        </div>
-      </details>
+        </button>
+        {isOpen && (
+          <p className=" block pt-5 text-sm leading-6 text-textColor">
+            {props.description}
+          </p>
+        )}
+      </div>
     </div>
   );
 }
