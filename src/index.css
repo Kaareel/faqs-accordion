@@ -15,7 +15,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.card {
+@media (min-width: 1024px) {
+  .card {
   width: 600px;
   min-height: 560px;
   max-height: auto;
@@ -23,6 +24,25 @@ code {
   border-radius: 15px;
   box-shadow: hsla(293, 16%, 49%, 0.171) 0px 30px 40px 0px;
   field-sizing: content;
+}}
+@media screen and (max-width: 500px){
+  .title {
+    margin-bottom: 20px;
+}
+}
+@media screen and (max-width: 500px) {
+  body::before {
+    top: -45px;
+    background-size: cover;
+    background-position: center;
+  }
+  .style-mobile {
+    width: 330px;
+    min-height: 520px;
+    border-radius: 10px;
+    margin: 25px 25px 0 25px;
+    border-radius: 15px;
+  }
 }
 
 .content {

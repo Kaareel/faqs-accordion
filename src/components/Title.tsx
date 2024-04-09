@@ -5,7 +5,7 @@ interface Props {
 }
 
 function Title ( props: Props ) {
-    return <h1 className="text-titleColor mb-8 flex items-center"><IconStar/>{props.title}</h1>
+    return <h1 className="text-titleColor lg:mb-8 flex items-center title"><IconStar/>{props.title}</h1>
 }
 
 export default Title;
