@@ -1,4 +1,3 @@
-import { useState } from "react";
 import FaqItem from "./components/FaqItem";
 import Title from "./components/Title";
 
